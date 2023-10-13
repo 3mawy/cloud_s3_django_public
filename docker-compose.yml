@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  api:
+    build: .
+    container_name: cloud-s3
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app/
+    ports:
+      - 8004:8000
+    env_file:
+      - ./.env
+    depends_on:
+      - db
+      - redis
+  db:
+    image: postgres:15
+    container_name: cloud-s3-db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    env_file:
+      - ./.env
+    environment:
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=${DB_DATABASE}
+    ports:
+      - "5432:5432"
+  redis:
+    image: redis:latest
+    container_name: cloud-s3-redis
+    ports:
+      - "6379:6379"
+volumes:
+  postgres_data:
