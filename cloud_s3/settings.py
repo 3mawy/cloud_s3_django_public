@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY", "django-insecure-@gn^we-p*eh*q&sgd$7_#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'RENDER' not in os.environ
 
-ALLOWED_HOSTS = ['3mawy.pythonanywhere.com', 'localhost', '5.182.18.38']
+ALLOWED_HOSTS = ['3mawy2.pythonanywhere.com', 'localhost', '5.182.18.38']
 
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:5173',
