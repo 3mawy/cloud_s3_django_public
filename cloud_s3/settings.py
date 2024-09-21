@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY", "django-insecure-@gn^we-p*eh*q&sgd$7_#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'RENDER' not in os.environ
 
-ALLOWED_HOSTS = ['3mawy.com', 'localhost', '5.182.18.38']
+ALLOWED_HOSTS = ['3mawy.pythonanywhere.com', 'localhost', '5.182.18.38']
 
 
 CORS_ORIGIN_WHITELIST = [
@@ -105,7 +105,7 @@ DATABASES = {
         "ENGINE": os.environ.get("DB_ENGINE", "django.db.backends.sqlite3"),
         "NAME": os.environ.get("DB_DATABASE", BASE_DIR / "db.sqlite3"),
         "USER": os.environ.get("DB_USER", "user"),
-        "PASSWORD": os.environ.get("DB_PASSWORD", "password"),
+        "PASSWORD": os.environ.get("DB_PASSWORD", "vGhb)G2F*$m+(6$("),
         "HOST": os.environ.get("DB_HOST", "localhost"),
         "PORT": os.environ.get("DB_PORT", "5432"),
     }
