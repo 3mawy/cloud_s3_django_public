@@ -30,7 +30,6 @@ DEBUG = 'RENDER' not in os.environ
 
 ALLOWED_HOSTS = ['3mawy.pythonanywhere.com', 'localhost', '5.182.18.38']
 
-
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:5173',
     'http://localhost:3000',
@@ -149,6 +148,8 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-
-STORAGES = {"default": {"BACKEND": "storages.backends.s3boto3.S3Boto3Storage"}}
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
+STORAGES = {"default": {"BACKEND": "storages.backends.s3boto3.S3Boto3Storage"},
+            'staticfiles': {
+                'BACKEND': 'django.contrib.staticfiles.storage.StaticFilesStorage',
+            }, }
